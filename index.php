@@ -4,7 +4,7 @@
 
 <head>
     <title>HMS</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+   
     <link rel="stylesheet" type="text/css" href="style1.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
@@ -96,7 +96,7 @@
     <div class="container register" style="font-family: 'IBM Plex Sans', sans-serif;">
         <div class="row">
             <div class="col-md-3 register-left" style="margin-top: 10%;right: 5%">
-                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/hospital-location-6101743-5023497.png" class="float_image" alt="" />
                 <h3>Welcome</h3>
 
             </div>
@@ -111,10 +111,13 @@
                             aria-controls="profile" aria-selected="false">Doctor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin" role="tab"
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admi" role="tab"
                             aria-controls="admin" aria-selected="false">Receptionist</a>
                     </li>
                 </ul>
+
+
+                <!-- register as patient -->
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading">Register as Patient</h3>
@@ -122,18 +125,15 @@
                             <div class="row register-form">
 
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="First Name *" name="fname" value="<?php if(isset($_COOKIE["fname"])) { echo $_COOKIE["fname"]; } ?>"
-                                            onkeydown="return alphaOnly(event);" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email *"
-                                            name="email" value="<?php if(isset($_COOKIE["email"])) { echo $_COOKIE["email"]; } ?>" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password *"
-                                            id="password" name="password" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" onkeyup='check();' required />
-                                    </div>
+                                <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="First Name *" name="fname"  onkeydown="return alphaOnly(event);" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Your Email *" name="email"  />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" id="password" name="password" onkeyup='check();' required/>
+                                        </div>
 
                                     <div class="form-group">
                                         <div class="maxl">
@@ -145,12 +145,6 @@
                                                 <input type="radio" name="gender" value="Female">
                                                 <span>Female </span>
                                             </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="checkbox" name="remember" <?php
-                                                if(isset($_COOKIE["email"])) { ?> checked
-                                            <?php } ?> />
-                                            <label for="remember-me">Remember me</label>
                                         </div>
                                         <a href="index1.php">Already have an account?</a>
                                     </div>
@@ -179,7 +173,9 @@
                         </form>
                     </div>
 
+                     
 
+                    <!-- code for login of doctor -->
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <h3 class="register-heading">Login as Doctor</h3>
                         <form method="post" action="func1.php">

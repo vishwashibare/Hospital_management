@@ -1,7 +1,26 @@
 <?php
+/**
+* This page will save username/password data in cookies if remember box is checked
+* If remember box is not checked, cookies will be cleared/deleted.
+*/
+
+
+
+?>
+
+<?php
 session_start();
 if(isset($_POST['patsub'])){
   $con=mysqli_connect("localhost","root","","myhmsdb");
+  if(!empty($_POST["remember"])) {
+    setcookie ("email",$_POST["email"],time()+ 3600);
+    setcookie ("password2",$_POST["password2"],time()+ 3600);
+    echo "Cookies Set Successfuly";
+  } else {
+    setcookie("email","");
+    setcookie("password2","");
+    echo "Cookies Not Set";
+  }
 	$email=$_POST['email'];
 	$password=$_POST['password2'];
 	$query="select * from patreg where email='$email';";
@@ -231,3 +250,4 @@ function display_admin_panel(){
 </html>';
 }
 ?>
+
