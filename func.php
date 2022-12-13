@@ -1,14 +1,4 @@
 <?php
-/**
-* This page will save username/password data in cookies if remember box is checked
-* If remember box is not checked, cookies will be cleared/deleted.
-*/
-
-
-
-?>
-
-<?php
 session_start();
 if(isset($_POST['patsub'])){
   $con=mysqli_connect("localhost","root","","myhmsdb");

@@ -111,7 +111,7 @@
                             aria-controls="profile" aria-selected="false">Doctor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admi" role="tab"
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin" role="tab"
                             aria-controls="admin" aria-selected="false">Receptionist</a>
                     </li>
                 </ul>
@@ -175,30 +175,53 @@
 
                      
 
-                    <!-- code for login of doctor -->
+                    <!-- code for Register of doctor -->
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <h3 class="register-heading">Login as Doctor</h3>
-                        <form method="post" action="func1.php">
+                        <h3 class="register-heading">Register as Doctor</h3>
+                        <form method="post" action="insert_doct.php">
                             <div class="row register-form">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="User Name *"
-                                            name="username3" onkeydown="return alphaOnly(event);" required />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password *"
-                                            name="password3" required />
-                                    </div>
 
-                                    <input type="submit" class="btnRegister" name="docsub1" value="Login" />
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="username *" name="usernamed"  required/>
+                                        </div>
+                                        <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="type Email *" name="emaild" required />
+                                    </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="your Specialization *" name="specd"  />
+                                        </div>
+
+                                    <div class="form-group">
+                                        <a href="doct_login.php">Already have an account?</a>
+                                    </div>
                                 </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" id="password" name="passwordd" onkeyup='check();' required/>
+                                        </div>
+
+                                    <div class="form-group">
+                                        <input type="tel" minlength="10" maxlength="10" name="contactd" 
+                                            class="form-control" placeholder="Your Phone *" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="password"
+                                            placeholder="your fees *" name="feesd" 
+                                            required /><span id='message'></span>
+                                    </div>
+                                    <input type="submit" class="btnRegister" name="docsub35" 
+                                        value="Register" />
+                                </div>
+
                             </div>
                         </form>
                     </div>
 
-
+                    
+                    <!-- login as admin -->
                     <div class="tab-pane fade show" id="admin" role="tabpanel" aria-labelledby="profile-tab">
                         <h3 class="register-heading">Login as Admin</h3>
                         <form method="post" action="func3.php">
